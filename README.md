@@ -3,7 +3,7 @@
 - This program allows users to perform k-means clustering on five different images to see how different k values impact the images.
 - Effectively used PIL and NumPy libraries.
 
-- # Demo
+ # Demo
 - Original Image
 ![Screenshot 2025-03-26 143152](https://github.com/user-attachments/assets/14c7a797-9bc6-42f3-8422-1ced9e9dd7cd)
 
