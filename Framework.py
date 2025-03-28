@@ -68,7 +68,7 @@ plt.subplots_adjust(bottom=0.3)
 ax.set_title("Image Compression with K-means")
 ax.axis('off')
 
-# Track current state
+# Track current state - setting each of them to 0 initially
 current_image_index = 0
 current_k = 0
 
@@ -81,7 +81,7 @@ slider = Slider(ax_slider, 'Clusters', 0, 10, valinit=current_k, valstep=1)
 
 
 def update_slider(val):
-    global current_k
+    global current_k # global variable for current_k
     current_k = int(val)  # holds the current value of k
     # this sets the data for the image in the list based on the current index and changes it based on the current k
     img_display.set_data(image_compressor_list[current_image_index].get_image(current_k))
@@ -90,9 +90,9 @@ def update_slider(val):
 
 def change_image(direction):
     global current_image_index, current_k
-    if direction == 'next':
+    if direction == 'next': # choosing the next image
         current_image_index = (current_image_index + 1) % len(image_filenames)
-    else:
+    else: # choosing the previous image
         current_image_index = (current_image_index - 1) % len(image_filenames)
 
     # getting the last k value for the image
@@ -114,4 +114,4 @@ button_prev.on_clicked(lambda event: change_image('prev'))
 button_next.on_clicked(lambda event: change_image('next'))
 slider.on_changed(update_slider)
 
-plt.show()
+plt.show() # displaying the plot
